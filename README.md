@@ -32,6 +32,30 @@ Numbering is for reference only (e.g. "this violates prop. 007"), not hierarchy.
 1. **Distillation.** Writing a belief down forces it to be precise.
 2. **Reuse.** The propositions compile into an installable [skill](./skills/principia-informatica/) that applies them when writing, reviewing, or designing software.
 
+## Installing the skill
+
+The skill is a single portable folder that follows the [Agent Skills](https://agentskills.io) standard. Full per-tool instructions are in [`skills/principia-informatica/INSTALL.md`](./skills/principia-informatica/INSTALL.md). The quick path for Claude Code, from the repo root:
+
+```bash
+# Personal (available in all your projects)
+cp -r "$(pwd)/skills/principia-informatica" ~/.claude/skills/principia-informatica
+
+# Project-scoped (only this repo)
+mkdir -p .claude/skills && cp -r "$(pwd)/skills/principia-informatica" .claude/skills/principia-informatica
+```
+
+It loads automatically when a task matches its description, or invoke it manually with `/principia-informatica`.
+
+## Updating the skill
+
+`references/propositions.md` inside the skill is a generated bundle; the source of truth is [`propositions/`](./propositions/). After adding or amending a proposition, regenerate it from the repo root and re-copy the folder to wherever it is installed:
+
+```bash
+scripts/build-skill-reference.sh
+```
+
+A tracked pre-commit hook runs the rebuild automatically; enable it once per clone with `git config core.hooksPath .githooks`.
+
 ## Contributing (to myself)
 
 Full rules in [`CLAUDE.md`](./CLAUDE.md#rules-when-editing-this-repo). In short:
