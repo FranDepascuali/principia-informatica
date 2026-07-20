@@ -40,7 +40,7 @@ This repository has two goals:
 
 ## Contributing (to myself)
 
-Rules for adding a proposition:
+The full editing rules live in [`CLAUDE.md`](./CLAUDE.md#rules-when-editing-this-repo). In short, rules for adding a proposition:
 
 - One proposition per file, following the template in [`propositions/TEMPLATE.md`](./propositions/TEMPLATE.md).
 - It must include at least one exception, or an honest admission that none is known yet.
