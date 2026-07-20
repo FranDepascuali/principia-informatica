@@ -1,27 +1,25 @@
 # Principia Informatica
 
-> Axioms, principles, and hard-won heuristics about building software — the things I hold to be true.
+> Axioms, principles, and hard-won heuristics about building software: the things I hold to be true.
 
 ## Preface
 
-In the tradition of the *Principia*: this is not a tutorial, not a style guide, and not a list of trends. It is a set of propositions about software that I have come to hold true through practice.
+In the tradition of the *Principia*: not a tutorial, not a style guide, not a list of trends. A set of propositions about software I have come to hold true through practice. Each is stated plainly, justified, and open to revision. Strong priors, not immutable laws. The goal is *phronesis*: practical wisdom, not dogma.
 
-Each proposition is stated plainly, justified with reasoning or experience, and — crucially — open to revision given evidence. These are strong priors, not immutable laws. The goal is *phronesis*: practical wisdom, not dogma.
-
-If a proposition here conflicts with your experience, that is interesting. Open an issue.
+If a proposition conflicts with your experience, that is interesting. Open an issue.
 
 ## How to read this
 
-Every proposition lives in its own file under [`propositions/`](./propositions/) and follows the same structure:
+Each proposition lives in its own file under [`propositions/`](./propositions/), with four sections:
 
-- **Proposition** — the rule, stated in one sentence.
-- **Rationale** — why I believe it, ideally with a concrete example or scar story.
-- **Corollaries** — practical consequences that follow from it.
-- **Exceptions** — when it does *not* apply. A rule without known exceptions is either trivial or untested.
+- **Proposition**: the rule, in one sentence.
+- **Rationale**: why I believe it.
+- **Corollaries**: practical consequences.
+- **Exceptions**: when it does *not* apply.
 
-Propositions are numbered for easy reference (e.g. "this violates prop. 007"). Numbering implies no hierarchy — only order of writing.
+Numbering is for reference only (e.g. "this violates prop. 007"), not hierarchy.
 
-## Index of propositions
+## Index
 
 | # | Proposition |
 |---|-------------|
@@ -29,23 +27,19 @@ Propositions are numbered for easy reference (e.g. "this violates prop. 007"). N
 | 002 | [Everything that affects behavior must be explicit](./propositions/002-everything-explicit.md) |
 | 003 | [Metaphysical parsimony](./propositions/003-metaphysical-parsimony.md) |
 
-*The index grows as propositions are added.*
-
 ## Purpose
 
-This repository has two goals:
-
-1. **Distillation.** Writing a belief down forces it to be precise. Vague intuitions don't survive the format above.
-2. **Reuse.** These propositions will eventually be compiled into a skill (`SKILL.md`) that can be applied when writing, reviewing, or designing software.
+1. **Distillation.** Writing a belief down forces it to be precise.
+2. **Reuse.** The propositions compile into an installable [skill](./skills/principia-informatica/) that applies them when writing, reviewing, or designing software.
 
 ## Contributing (to myself)
 
-The full editing rules live in [`CLAUDE.md`](./CLAUDE.md#rules-when-editing-this-repo). In short, rules for adding a proposition:
+Full rules in [`CLAUDE.md`](./CLAUDE.md#rules-when-editing-this-repo). In short:
 
-- One proposition per file, following the template in [`propositions/TEMPLATE.md`](./propositions/TEMPLATE.md).
-- It must include at least one exception, or an honest admission that none is known yet.
-- If confidence drops or a proposition is refuted, it is not deleted — it is amended, with a note. The history of being wrong is part of the record.
+- One proposition per file, using [`propositions/TEMPLATE.md`](./propositions/TEMPLATE.md).
+- At least one exception, or an honest note that none is known yet.
+- Never delete a proposition; if it is refuted, amend it in place with a dated note.
 
 ## License
 
-MIT — take what is useful, discard the rest.
+MIT. Take what is useful, discard the rest.
