@@ -26,6 +26,10 @@ Numbering is for reference only (e.g. "this violates prop. 007"), not hierarchy.
 | 001 | [Code exists to be understood](./propositions/001-code-exists-to-be-understood.md) |
 | 002 | [Everything that affects behavior must be explicit](./propositions/002-everything-explicit.md) |
 | 003 | [Metaphysical parsimony](./propositions/003-metaphysical-parsimony.md) |
+| 004 | [Build without classes](./propositions/004-build-without-classes.md) |
+| 005 | [Data is plain and serializable](./propositions/005-data-is-plain-and-serializable.md) |
+| 006 | [Group helpers by the type they serve](./propositions/006-group-helpers-by-type.md) |
+| 007 | [Escape the law of the instrument](./propositions/007-escape-the-law-of-the-instrument.md) |
 
 ## Purpose
 
