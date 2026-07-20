@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Keep the generated skill bundle in sync with propositions/ on every commit.
+# Regenerates skills/principia-informatica/references/propositions.md from the
+# source propositions and stages it, so a stale bundle can never be committed.
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+"$repo_root/scripts/build-skill-reference.sh" >/dev/null
+git add "$repo_root/skills/principia-informatica/references/propositions.md"

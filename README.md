@@ -25,7 +25,9 @@ Propositions are numbered for easy reference (e.g. "this violates prop. 007"). N
 
 | # | Proposition |
 |---|-------------|
-| 001 | *(first proposition goes here)* |
+| 001 | [Code exists to be understood](./propositions/001-code-exists-to-be-understood.md) |
+| 002 | [Everything that affects behavior must be explicit](./propositions/002-everything-explicit.md) |
+| 003 | [Metaphysical parsimony](./propositions/003-metaphysical-parsimony.md) |
 
 *The index grows as propositions are added.*
 
@@ -41,7 +43,6 @@ This repository has two goals:
 Rules for adding a proposition:
 
 - One proposition per file, following the template in [`propositions/TEMPLATE.md`](./propositions/TEMPLATE.md).
-- It must be falsifiable in principle — something experience could have proven wrong.
 - It must include at least one exception, or an honest admission that none is known yet.
 - If confidence drops or a proposition is refuted, it is not deleted — it is amended, with a note. The history of being wrong is part of the record.
 

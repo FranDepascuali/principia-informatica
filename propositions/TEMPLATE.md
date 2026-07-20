@@ -4,7 +4,7 @@
 The rule, stated in ONE sentence. Imperative or declarative.
 
 ## Rationale
-Why I believe it. Concrete examples or scar stories preferred over abstract argument. Do not fabricate examples; if none is at hand yet, leave a `<!-- TODO: concrete example -->` placeholder.
+Why I believe it. A concrete example or scar story is welcome but optional; reasoned argument alone is a complete Rationale. Never fabricate an example.
 
 ## Corollaries
 Practical, actionable consequences that follow from the proposition.

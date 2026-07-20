@@ -46,4 +46,10 @@ The ChatGPT app does not load `SKILL.md` folders. Port it manually:
 
 ## Keeping the skill in sync
 
-`references/propositions.md` is the agent-facing copy of the propositions. After adding or amending a proposition in `propositions/`, update `references/propositions.md` to match, then re-copy the folder to wherever it is installed.
+`references/propositions.md` is a generated bundle, not a hand-maintained file. The single source of truth is the repo's `propositions/` directory. After adding or amending a proposition, regenerate the bundle from the repo root:
+
+```bash
+scripts/build-skill-reference.sh
+```
+
+Then re-copy the skill folder to wherever it is installed. Never edit `references/propositions.md` directly; the next regeneration would overwrite the change.
