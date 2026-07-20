@@ -6,6 +6,8 @@ Everything that affects a program's behavior must be explicit and visible: no hi
 ## Rationale
 This follows directly from prop. 001: you cannot understand what you cannot see. Hidden inputs are the main reason a function that "looks right" behaves wrong: a global read here, an ambient singleton there, a side effect three layers down. When dependencies are explicit parameters, a function's signature is a truthful contract that tells you everything capable of changing its result. When they are implicit, the signature lies, and understanding the function requires reading the whole call graph behind it.
 
+Explicitness also eliminates a whole class of threading bugs. Data races feed on hidden shared mutable state: globals, ambient singletons, implicit caches touched from more than one thread. Code that passes its dependencies in and keeps state out of the shadows has far less to race over, so concurrency bugs that would otherwise be invisible simply cannot arise.
+
 ## Corollaries
 - Pass dependencies in; do not reach out for them. Prefer arguments over globals, singletons, and ambient context.
 - Make side effects obvious at the call site, not buried inside an innocuous-looking accessor.
