@@ -30,6 +30,7 @@ Numbering is for reference only (e.g. "this violates prop. 007"), not hierarchy.
 | 005 | [Data is plain and serializable](./propositions/005-data-is-plain-and-serializable.md) |
 | 006 | [Group helpers by the type they serve](./propositions/006-group-helpers-by-type.md) |
 | 007 | [Escape the law of the instrument](./propositions/007-escape-the-law-of-the-instrument.md) |
+| 008 | [Comments explain why, never what](./propositions/008-comments-explain-why.md) |
 
 ## Purpose
 
