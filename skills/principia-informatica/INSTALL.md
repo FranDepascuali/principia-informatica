@@ -1,40 +1,24 @@
 # Installing the Principia Informatica skill
 
-The skill is a single portable folder (`skills/principia-informatica/`) that follows the [Agent Skills](https://agentskills.io) open standard. The same folder works across every skills-compatible tool. Only the install location differs per tool.
+The skill is a single portable folder (`skills/principia-informatica/`) that follows the [Agent Skills](https://agentskills.io) open standard. The same folder works across every skills-compatible tool.
 
-Below, `SKILL_SRC` is the path to this folder in the repo:
+## Recommended: the `skills` CLI
 
-```bash
-SKILL_SRC="$(pwd)/skills/principia-informatica"   # run from the repo root
-```
-
-## Claude Code / Claude.ai / Claude Desktop
-
-Personal (available in all your projects):
+One command, no clone required, using the [`skills`](https://github.com/vercel-labs/skills) CLI:
 
 ```bash
-cp -r "$SKILL_SRC" ~/.claude/skills/principia-informatica
+npx skills add FranDepascuali/principia-informatica
 ```
 
-Project-scoped (only this repo):
+By default this installs into the current repo (`.claude/skills/`). Add `-g` to install it globally (`~/.claude/skills/`), available in all your projects:
 
 ```bash
-mkdir -p .claude/skills
-cp -r "$SKILL_SRC" .claude/skills/principia-informatica
+npx skills add FranDepascuali/principia-informatica -g
 ```
 
-The skill loads automatically when a task matches its description. You can also invoke it manually with `/principia-informatica`.
+The same command works across Claude Code, Cursor, Codex, GitHub Copilot / VS Code, Gemini CLI, and the other tools listed at https://agentskills.io/clients. Use `--list` to preview the skills in the repo before installing.
 
-## OpenAI Codex CLI
-
-```bash
-mkdir -p .agents/skills
-cp -r "$SKILL_SRC" .agents/skills/principia-informatica
-```
-
-## Cursor, GitHub Copilot / VS Code, Gemini CLI, and other skills-compatible tools
-
-Each reads the same `SKILL.md` from its own skills directory. Check the tool's docs for the exact path, then copy the folder there. The Agent Skills client list is at https://agentskills.io/clients.
+Once installed, the skill loads automatically when a task matches its description. You can also invoke it manually with `/principia-informatica`.
 
 ## ChatGPT (consumer app and Custom GPTs)
 
@@ -52,4 +36,4 @@ The ChatGPT app does not load `SKILL.md` folders. Port it manually:
 scripts/build-skill-reference.sh
 ```
 
-Then re-copy the skill folder to wherever it is installed. Never edit `references/propositions.md` directly; the next regeneration would overwrite the change.
+Then re-run `npx skills add FranDepascuali/principia-informatica` to pull the update wherever it is installed. Never edit `references/propositions.md` directly; the next regeneration would overwrite the change.

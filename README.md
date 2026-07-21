@@ -38,17 +38,21 @@ Numbering is for reference only (e.g. "this violates prop. 007"), not hierarchy.
 
 ## Installing the skill
 
-The skill is a single portable folder that follows the [Agent Skills](https://agentskills.io) standard. Full per-tool instructions are in [`skills/principia-informatica/INSTALL.md`](./skills/principia-informatica/INSTALL.md). The quick path for Claude Code, from the repo root:
+One command, no clone required, using the [`skills`](https://github.com/vercel-labs/skills) CLI:
 
 ```bash
-# Personal (available in all your projects)
-cp -r "$(pwd)/skills/principia-informatica" ~/.claude/skills/principia-informatica
-
-# Project-scoped (only this repo)
-mkdir -p .claude/skills && cp -r "$(pwd)/skills/principia-informatica" .claude/skills/principia-informatica
+npx skills add FranDepascuali/principia-informatica
 ```
 
-It loads automatically when a task matches its description, or invoke it manually with `/principia-informatica`.
+This installs into the current repo (`.claude/skills/`). Add `-g` to install it globally (`~/.claude/skills/`), available in all your projects:
+
+```bash
+npx skills add FranDepascuali/principia-informatica -g
+```
+
+The same command works across Claude Code, Cursor, Codex, Copilot, Gemini CLI, and other skills-compatible tools. It loads automatically when a task matches its description, or invoke it manually with `/principia-informatica`.
+
+The skill follows the [Agent Skills](https://agentskills.io) standard. For other tools and install paths, see [`skills/principia-informatica/INSTALL.md`](./skills/principia-informatica/INSTALL.md).
 
 ## Updating the skill
 
