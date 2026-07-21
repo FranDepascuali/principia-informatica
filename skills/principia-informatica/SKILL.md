@@ -1,6 +1,6 @@
 ---
 name: principia-informatica
-description: Apply Principia Informatica, a curated set of software engineering propositions (axioms and hard-won heuristics distilled from practice), when writing, reviewing, or designing software. Use when making a technical design decision, choosing a technology or dependency, reviewing code or a pull request, weighing an engineering trade-off, or sanity-checking an architecture: test the work against these first-principles rules and cite the relevant proposition numbers. Each proposition carries a rationale, corollaries, and explicit exceptions, so apply them as strong priors, not dogma.
+description: "Apply Principia Informatica, a curated set of software engineering propositions (axioms and hard-won heuristics distilled from practice), when writing, reviewing, or designing software. Use when making a technical design decision, choosing a technology or dependency, reviewing code or a pull request, weighing an engineering trade-off, or sanity-checking an architecture: test the work against these first-principles rules and cite the relevant proposition numbers. Each proposition carries a rationale, corollaries, and explicit exceptions, so apply them as strong priors, not dogma."
 license: MIT
 ---
 
