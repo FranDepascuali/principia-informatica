@@ -154,32 +154,37 @@ Give a small boy a hammer and he finds that everything needs pounding (Kaplan). 
 
 ---
 
-# Proposition 008 — Comments explain why, never what
+# Proposition 008 — A comment is a claim about the world
 
 ## Proposition
 Aim a comment at a fact about the world rather than at the lines below it, so that it stays true through a rewrite of those lines.
 
 ## Rationale
-Good comments are changed sporadically, and that is not an accident of good writing: it follows from what they point at. A comment is stable exactly when it points at something outside the code, a constraint the world imposes, a decision taken once, a property of the domain, an alternative already tried and discarded. None of those move when the implementation moves, because none of them were ever about the implementation. A comment that describes what the code does is pinned to those exact lines, so every edit to them obligates an edit to the prose.
+A comment is a claim about something, and its fate depends on what it is a claim about.
 
-That obligation is the problem, because nothing enforces it. The compiler, the tests, and the reader all check the code; nothing checks the sentence above it. A comment that must change constantly is therefore a comment that will eventually not change, and the failure is worse than silence: stale prose is trusted precisely because it looks authoritative, and it sends the reader looking in the wrong place. Frequency of required change is the diagnostic. A comment you keep having to touch was never carrying knowledge; it was carrying a copy of the code, and copies drift.
+The author perceives a problem together with the facts that constrain it: what the domain requires, what the platform forbids, what a measurement showed, what was tried and abandoned. From those facts they reason to a solution, and commit the solution to a formal language. That language is built to carry conclusions and has nowhere to put premises. The machine needs no reasons, only instructions, and so the reasons are dropped at the moment of writing.
 
-Facts about the world are also the only thing worth the risk, because they are the only thing unrecoverable. Everything the implementation does can be learned by reading the implementation, which is what it is for; a comment restating it competes with a source that cannot be wrong. What surrounds the code has no such source. The constraint that forced an awkward shape, the option that looks obvious and was already tried, the reason an order of operations matters: that knowledge lives in the author's head, and if it is not written down it is lost the moment they move on. The next person sees a strange-looking line, finds nothing defending it, and "simplifies" it back into the bug it was written to prevent.
+What is dropped cannot be recovered, because the encoding cannot be inverted. The code shows what was decided and is silent on what decided it. The conclusion a reader recovers perfectly, simply by reading it; the premises they can only guess at, and a plausible guess is indistinguishable from the truth. A comment exists to restore the premises the code could not hold. Most code loses no premise, and wants no comment.
+
+A comment aimed at a premise survives any rewrite that preserves the conclusion, for the premise was never about the lines. A comment aimed at the conclusion is falsified by the next edit.
+
+Nothing will report that falsification. The compiler, the tests and the runtime execute the code and never read the comment. Whoever does read it reads to learn rather than to verify: to them the prose is evidence, not a hypothesis. So the only audience able to catch a lying comment is the audience it lies to, and it catches it only after having believed it. Stale prose is worse than none: it carries an authority it has not earned, and sends the reader looking in the wrong place.
 
 ## Corollaries
-- Test a comment before writing it: if the code beneath it were rewritten from scratch, would the comment still be true? If not, it is aimed at the implementation and should be deleted or re-aimed at the fact behind it.
-- Treat comment churn as a review signal. A diff that edits prose alongside every logic change is evidence the prose was pinned to the logic; a comment nobody has needed to touch in years is usually one of the good ones, not a stale one.
-- Before writing a comment, try to make it unnecessary: a better name, an extracted function, an earlier return. Reach for the comment when the code has genuinely run out of room. (See prop. 001 and 002.)
-- Prefer comments that reference something external and unguessable: a domain decision, a ticket, an incident, a spec section, a vendor bug, a benchmark result.
-- Treat a stale comment as a bug and delete or correct it on sight; unlike dead code, it cannot be caught by tooling.
-- Review comments as strictly as code. "This comment restates the line below it" is a legitimate review objection.
-- If the *why* spans several files or outlives the code, it belongs in a commit message, an ADR, or a design doc, with the comment reduced to a pointer.
+- Comment only where there is a premise to record. Most code has none behind it and wants no comment: a header on every function and a note on every field bury the few comments that matter.
+- Try first to make the comment unnecessary: a better name, an extracted function, an earlier return. Reach for prose only when the code has run out of room. (See prop. 001 and 002.)
+- Test a comment before writing it: if the code beneath it were rewritten from scratch, would the comment still be true? If not, it is aimed at the implementation, and should be deleted or re-aimed at the premise behind it.
+- Prefer premises that are external and unguessable: an incident, a ticket, a spec section, a vendor bug, a benchmark result.
+- Clarity is a comment's first virtue and brevity its second. A comment is the only record of its premise, so a sentence the reader must decipher has already failed; shorten it only as far as precision allows.
+- Keep a comment adjacent to its subject: above the statement it concerns, or above the declaration of the function, type or field it concerns. An orphaned comment is stale by construction.
+- Treat comment churn as a review signal. "This comment restates the line below it" is a legitimate review objection.
+- Treat a stale comment as a bug and fix or delete it on sight; unlike dead code, no tooling will catch it.
 
 ## Exceptions
-- Public API documentation legitimately restates *what*, because its reader is looking at the signature, not the body. Docstrings are a contract for callers, not an explanation for maintainers.
-- Irreducibly complex code (numerics, cryptography, parsers, hot loops) may need a *what*-level walkthrough, because the code genuinely cannot carry its own meaning. This is the same carve-out as prop. 001.
-- Ceremonial and machine-directed comments (license headers, lint suppressions, type-checker escapes, codegen markers) are not explanation and are not covered by this rule, though the justification attached to a suppression is a *why* and should be a real one.
-- Teaching code, where the reader is a learner rather than a maintainer, is written to be read line by line and may narrate *what* on purpose.
+- Public API documentation legitimately restates *what*, because its reader has the signature and not the body. A docstring is a contract for callers, not an explanation for maintainers.
+- Irreducibly complex code (numerics, cryptography, parsers, hot loops) may need a *what*-level walkthrough, because it genuinely cannot carry its own meaning. Same carve-out as prop. 001.
+- Ceremonial and machine-directed comments (license headers, lint suppressions, codegen markers) are not explanation and are out of scope, though the justification attached to a suppression is a *why* and should be a real one.
+- Teaching code, whose reader is a learner rather than a maintainer, may narrate *what* on purpose.
 
 
 ---
