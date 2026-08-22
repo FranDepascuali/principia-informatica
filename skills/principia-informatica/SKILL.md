@@ -21,7 +21,7 @@ Reach for these propositions when:
 ## How to apply them
 
 1. Read `references/propositions.md` for the full set. Each entry has four parts: Proposition (the one-sentence rule), Rationale (why), Corollaries (what follows in practice), and Exceptions (when it does not hold).
-2. Match the situation to the relevant proposition(s). Cite the specific one by number, e.g. "This looks like it violates prop. 001 (boring technology)."
+2. Match the situation to the relevant proposition(s). Cite the specific one by number, e.g. "This looks like it violates prop. 003 (metaphysical parsimony)." To cite a single consequence rather than the whole rule, name the corollary: "003 Cor. 4".
 3. State the rule, then the rationale, then check the Exceptions before concluding. Do not apply a proposition whose exception fits the situation in front of you.
 4. Treat these as priors, not proofs. If the user's context genuinely contradicts a proposition, say so plainly. A real counter-case is more interesting than forced compliance.
 5. When reviewing, phrase feedback as "prop. NNN suggests X, because Y" so it is traceable and arguable.

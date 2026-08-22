@@ -15,14 +15,14 @@ A comment aimed at a premise survives any rewrite that preserves the conclusion,
 Nothing will report that falsification. The compiler, the tests and the runtime execute the code and never read the comment. Whoever does read it reads to learn rather than to verify: to them the prose is evidence, not a hypothesis. So the only audience able to catch a lying comment is the audience it lies to, and it catches it only after having believed it. Stale prose is worse than none: it carries an authority it has not earned, and sends the reader looking in the wrong place.
 
 ## Corollaries
-- Comment only where there is a premise to record. Most code has none behind it and wants no comment: a header on every function and a note on every field bury the few comments that matter.
-- Try first to make the comment unnecessary: a better name, an extracted function, an earlier return. Reach for prose only when the code has run out of room. (See prop. 001 and 002.)
-- Test a comment before writing it: if the code beneath it were rewritten from scratch, would the comment still be true? If not, it is aimed at the implementation, and should be deleted or re-aimed at the premise behind it.
-- Prefer premises that are external and unguessable: an incident, a ticket, a spec section, a vendor bug, a benchmark result.
-- Clarity is a comment's first virtue and brevity its second. A comment is the only record of its premise, so a sentence the reader must decipher has already failed; shorten it only as far as precision allows.
-- Keep a comment adjacent to its subject: above the statement it concerns, or above the declaration of the function, type or field it concerns. An orphaned comment is stale by construction.
-- Treat comment churn as a review signal. "This comment restates the line below it" is a legitimate review objection.
-- Treat a stale comment as a bug and fix or delete it on sight; unlike dead code, no tooling will catch it.
+- **Cor. 1.** Comment only where there is a premise to record. Most code has none behind it and wants no comment: a header on every function and a note on every field bury the few comments that matter.
+- **Cor. 2.** Try first to make the comment unnecessary: a better name, an extracted function, an earlier return. Reach for prose only when the code has run out of room. (See prop. 001 and 002.)
+- **Cor. 3.** Test a comment before writing it: if the code beneath it were rewritten from scratch, would the comment still be true? If not, it is aimed at the implementation, and should be deleted or re-aimed at the premise behind it.
+- **Cor. 4.** Prefer premises that are external and unguessable: an incident, a ticket, a spec section, a vendor bug, a benchmark result.
+- **Cor. 5.** Clarity is a comment's first virtue and brevity its second. A comment is the only record of its premise, so a sentence the reader must decipher has already failed; shorten it only as far as precision allows.
+- **Cor. 6.** Keep a comment adjacent to its subject: above the statement it concerns, or above the declaration of the function, type or field it concerns. An orphaned comment is stale by construction.
+- **Cor. 7.** Treat comment churn as a review signal. "This comment restates the line below it" is a legitimate review objection.
+- **Cor. 8.** Treat a stale comment as a bug and fix or delete it on sight; unlike dead code, no tooling will catch it.
 
 ## Exceptions
 - Public API documentation legitimately restates *what*, because its reader has the signature and not the body. A docstring is a contract for callers, not an explanation for maintainers.

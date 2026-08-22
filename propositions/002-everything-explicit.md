@@ -9,11 +9,11 @@ This follows directly from prop. 001: you cannot understand what you cannot see.
 Explicitness also eliminates a whole class of threading bugs. Data races feed on hidden shared mutable state: globals, ambient singletons, implicit caches touched from more than one thread. Code that passes its dependencies in and keeps state out of the shadows has far less to race over, so concurrency bugs that would otherwise be invisible simply cannot arise.
 
 ## Corollaries
-- Pass dependencies in; do not reach out for them. Prefer arguments over globals, singletons, and ambient context.
-- Make side effects obvious at the call site, not buried inside an innocuous-looking accessor.
-- Prefer pure functions where practical, and isolate the impure edges of the system.
-- If you cannot tell what a function depends on from its signature, the signature is incomplete.
-- Dependency injection containers are usually overengineering: they hide the very wiring they claim to manage. Pass dependencies explicitly as arguments instead of resolving them from a container.
+- **Cor. 1.** Pass dependencies in; do not reach out for them. Prefer arguments over globals, singletons, and ambient context.
+- **Cor. 2.** Make side effects obvious at the call site, not buried inside an innocuous-looking accessor.
+- **Cor. 3.** Prefer pure functions where practical, and isolate the impure edges of the system.
+- **Cor. 4.** If you cannot tell what a function depends on from its signature, the signature is incomplete.
+- **Cor. 5.** Dependency injection containers are usually overengineering: they hide the very wiring they claim to manage. Pass dependencies explicitly as arguments instead of resolving them from a container.
 
 ## Exceptions
 None known yet. I have not found a case where letting something affect behavior invisibly is worth the loss of understanding.
