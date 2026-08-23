@@ -4,9 +4,13 @@
 
 ## Preface
 
-In the tradition of the *Principia*: not a tutorial, not a style guide, not a list of trends. A set of propositions about software I have come to hold true through practice. Each is stated plainly, justified, and open to revision. Strong priors, not immutable laws. The goal is *phronesis*: practical wisdom, not dogma.
+A set of propositions about software I have come to hold true through experience. Each is stated plainly, justified, and open to revision. Strong priors, not immutable laws. The goal is *phronesis*: practical wisdom, not dogma.
 
 If a proposition conflicts with your experience, that is interesting. Open an issue.
+
+## On the use of AI
+
+This work is written with AI, using the same tools I use as a software engineer. The beliefs, the arguments, and the philosophical stakes are mine.
 
 ## How to read this
 
