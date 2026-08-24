@@ -43,7 +43,7 @@ Numbering is for reference only (e.g. "this violates prop. 007"), not hierarchy.
 
 ## Installing the skill
 
-One command, no clone required, using the [`skills`](https://github.com/vercel-labs/skills) CLI:
+Preferred: the [Agent Skills](https://agentskills.io) standard, via the [`skills`](https://github.com/vercel-labs/skills) CLI. One command, no clone required:
 
 ```bash
 npx skills add FranDepascuali/principia-informatica
@@ -57,11 +57,19 @@ npx skills add FranDepascuali/principia-informatica -g
 
 The same command works across Claude Code, Cursor, Codex, Copilot, Gemini CLI, and other skills-compatible tools. It loads automatically when a task matches its description, or invoke it manually with `/principia-informatica`.
 
-The skill follows the [Agent Skills](https://agentskills.io) standard. For other tools and install paths, see [`skills/principia-informatica/INSTALL.md`](./skills/principia-informatica/INSTALL.md).
+## Updating an installed copy
 
-## Updating the skill
+An installed skill is a copy. To pull the latest propositions:
 
-`references/propositions.md` inside the skill is a generated bundle; the source of truth is [`propositions/`](./propositions/). After adding or amending a proposition, regenerate it from the repo root and re-copy the folder to wherever it is installed:
+```bash
+npx skills update principia-informatica
+```
+
+Add `-g` for a global install, or run `npx skills update` with no arguments to update every installed skill. `npx skills list` shows what you have and where.
+
+## Regenerating the bundle (author)
+
+`references/propositions.md` inside the skill is a generated file; the source of truth is [`propositions/`](./propositions/). After adding or amending a proposition, rebuild it from the repo root:
 
 ```bash
 scripts/build-skill-reference.sh
